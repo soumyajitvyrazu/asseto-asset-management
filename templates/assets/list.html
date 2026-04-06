@@ -19,7 +19,7 @@
         <li class="breadcrumb-item active">Assets</li>
       </ol>
     </nav>
-    <h1>Asset Inventory</h1>
+    <h4>Asset Inventory</h4>
     <p class="page-subtitle">Manage and track your organization's high-value physical assets.</p>
   </div>
   <div class="d-flex align-items-center gap-2 mt-1">
@@ -28,7 +28,7 @@
       {% if deleted_asset_count %}<span class="count-badge">{{ deleted_asset_count }}</span>{% endif %}
     </a>
     {% if perms.authentication.add_asset %}
-      <a href="{% url 'assets:add' %}" class="btn-register">
+      <a href="{% url 'assets:add' %}" class="btn-register text-white">
         <i class="bi bi-plus-lg"></i> Register New Asset
       </a>
     {% endif %}

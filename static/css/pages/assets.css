@@ -13,6 +13,12 @@
   --color-muted:         #6B7280;
   --card-radius:         10px;
 }
+.btn-register{
+  color: white;
+}
+body.theme-dark .btn-register{
+  color: white;
+}
 
 /* ── Page headers ─────────────────────────────────────────────────────────── */
 .assets-page-header,
@@ -602,6 +608,20 @@
   letter-spacing: .06em;
 }
 .sidebar-add-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-size: .85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+body.theme-dark .sidebar-add-btn {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -1471,10 +1491,25 @@ body.theme-dark .action-btn.danger:hover {
 body.theme-dark .btn-unassign {
   background: #3a1c1c;
   border-color: #5c2020;
+  color: #DC2626;
+  border: 1.5px;
+  border-radius: 6px;
+  padding: .25rem .65rem;
+  font-size: .72rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
 }
 body.theme-dark .btn-assign {
   background: var(--color-primary-light);
   border-color: #3d3780;
+  color: var(--color-primary);
+  border: 1.5px;
+  border-radius: 6px;
+  padding: .3rem .8rem;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 body.theme-dark .btn-add-row {
   background: var(--color-primary-light);
@@ -1505,6 +1540,17 @@ body.theme-dark .filter-select-btn {
   background: #151521;
   color: var(--color-text);
   border-color: var(--color-border);
+  border: 1.5px solid var(--color-border);
+  border-radius: 7px;
+  padding: .42rem .75rem;
+  font-size: .85rem;
+  width: 100%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* ── Table ───────────────────────────────────────────────────────────────── */
@@ -1529,6 +1575,13 @@ body.theme-dark .status-select-inline {
   background: #151521;
   color: var(--color-text);
   border-color: var(--color-border);
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  padding: .3rem .6rem;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 130px;
 }
 
 /* ── Assignee chip ───────────────────────────────────────────────────────── */

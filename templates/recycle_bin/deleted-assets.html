@@ -19,7 +19,7 @@
         <li class="breadcrumb-item active">Trash Bin</li>
       </ol>
     </nav>
-    <h1>Trash Bin</h1>
+    <h4>Trash Bin</h4>
     <p class="page-subtitle">Review and manage recently removed organization assets.</p>
   </div>
   <div>
@@ -31,10 +31,9 @@
 
 {# ── Table card ──────────────────────────────────────────────────────────── #}
 <div class="trash-table-card">
-
   <div class="trash-table-header">
-    <div class="d-flex align-items-center gap-2">
-      <h2>Deleted Assets List</h2>
+    <div class="d-flex align-items-center gap-2" id="">
+      <h6>Deleted Assets List</h6>
       {% if page_object %}
         <span class="item-count-badge">{{ page_object.paginator.count }} Items</span>
       {% endif %}
@@ -48,7 +47,8 @@
                hx-get="{% url 'recycle_bin:deleted_assets_search' page_object.number %}"
                hx-trigger="keyup changed delay:400ms, search"
                hx-target="#search_result"
-               aria-label="Search deleted assets">
+               aria-label="Search deleted assets"
+               class="search-input">
       </div>
       <button class="trash-icon-btn" title="Filter" type="button">
         <i class="bi bi-funnel"></i>
@@ -62,7 +62,7 @@
 
   <div class="table-responsive">
     <table class="trash-table">
-      <thead>
+      <thead class="trash-table-header-list">
         <tr>
           <th>Sl No.</th>
           <th>Asset Name</th>
@@ -77,12 +77,12 @@
       {% if page_object %}
       <tbody id="search_result">
         {% for asset in page_object %}
-        <tr>
-          <td class="trash-index">
+        <tr class="search-result-body">
+          <td class="trash-index" id="trash-item">
             {{ page_object.start_index|add:forloop.counter0|stringformat:"02d" }}
           </td>
 
-          <td>
+          <td id="trash-item">
             <div class="trash-asset-name">
               <span class="trash-asset-icon">
                 <i class="bi bi-laptop"></i>
@@ -91,7 +91,7 @@
             </div>
           </td>
 
-          <td class="trash-serial">{{ asset.serial_no|default:"—" }}</td>
+          <td class="trash-serial" id="trash-item">{{ asset.serial_no|default:"—" }}</td>
 
           <td>
             {% if asset.product and asset.product.product_type %}
@@ -101,9 +101,9 @@
             {% endif %}
           </td>
 
-          <td>{{ asset.vendor|default:"—" }}</td>
+          <td id="trash-item">{{ asset.vendor|default:"—" }}</td>
 
-          <td class="trash-date">{{ asset.updated_at|date:"M d, Y" }}</td>
+          <td class="trash-date" id="trash-item">{{ asset.updated_at|date:"M d, Y" }}</td>
 
           <td>
             <div class="trash-actions">

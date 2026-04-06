@@ -449,11 +449,11 @@ def search_with_filters(request,list_of_audited_assets,asset_conditions_map):
         q &= Q(asset_status_id=status_id)
     
     if product_category_id:
-        q &= Q(product__product_category__id=product_category_id)
+        q &= Q(product__product_sub_category_id=product_category_id)
     
     if product_type_id:
         q &= Q(product__product_type_id=product_type_id)
-
+    print("Query after filters:", q)
     page_object = list(Asset.undeleted_objects.filter(q).order_by('-created_at')[:10])
 
     asset_ids = [obj.id for obj in page_object]

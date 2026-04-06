@@ -12,7 +12,7 @@
 {# ── Page header ──────────────────────────────────────────────────────────── #}
 <div class="audit-page-header">
   <div>
-    <h1>{% if get_asset %}Update Audit{% else %}New Audit Entry{% endif %}</h1>
+    <h4>{% if get_asset %}Update Audit{% else %}New Audit Entry{% endif %}</h4>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb page-breadcrumb">
         <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
@@ -28,15 +28,13 @@
 
 <form method="POST" action="{{ request.path }}" novalidate enctype="multipart/form-data" id="audit-form">
 {% csrf_token %}
-
 <div class="audit-layout">
-
   {# ── Left: Audit Information ──────────────────────────────────────────────── #}
   <div class="audit-main">
     <div class="audit-card">
       <div class="audit-card-header">
         <div class="section-icon"><i class="bi bi-info-circle-fill"></i></div>
-        <h2>Audit Information</h2>
+        <h6 class="mt-2">Audit Information</h6>
       </div>
       <div class="audit-card-body">
 
@@ -107,11 +105,11 @@
     <div class="audit-card">
       <div class="audit-card-header">
         <div class="section-icon"><i class="bi bi-camera-fill"></i></div>
-        <h2>Audit Image</h2>
+        <h6 class="mt-2">Audit Image</h6>
       </div>
       <div class="audit-card-body">
         <label for="audit-image-input" class="audit-upload-area">
-          <i class="bi bi-cloud-arrow-up"></i>
+          <i class="bi bi-cloud-arrow-up mb-3"></i>
           <div class="upload-label">Click to upload or drag &amp; drop</div>
           <div class="upload-hint">PNG, JPG or PDF (MAX. 10MB)</div>
         </label>

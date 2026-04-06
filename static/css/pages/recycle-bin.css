@@ -46,8 +46,8 @@
 .page-breadcrumb .breadcrumb-item.active { color: var(--color-primary); }
 
 .btn-back-assets {
-  background: #fff;
-  color: var(--color-text);
+  background: #4338CA;
+  color: white;
   border: 1.5px solid var(--color-border);
   border-radius: 8px;
   padding: .5rem 1.1rem;
@@ -60,6 +60,23 @@
   cursor: pointer;
   white-space: nowrap;
 }
+
+body.theme-dark .btn-back-assets {
+  background: #4338CA;
+  color: white;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  padding: .5rem 1.1rem;
+  font-size: .875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .btn-back-assets:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
@@ -82,6 +99,53 @@
   padding: 1rem 1.25rem;
   border-bottom: 1.5px solid var(--color-border);
 }
+
+body.theme-dark .trash-table-header-list{
+  background-color: #16162A;
+}
+
+body.theme-dark #trash-item{
+  color:white
+}
+
+body.theme-dark .trash-table-header {
+  background-color: #1e1e2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1.5px solid rgb(133, 133, 133);
+}
+.search-result-body{
+  background-color: white;
+  color: black;
+}
+
+body.theme-dark .search-input{
+  background-color: #151521;
+  color: white;
+}
+
+body.theme-dark .search-result-body{
+  background-color: #1e1e2d;
+  color: white;
+}
+
+.trash-type-badge{
+  background-color: #4338CA;
+  color: white;
+}
+
+.trash-pagination-wrap{
+  background-color: #1e1e2d;
+}
+
+#table-header{
+  background-color: black;
+}
+
 .trash-table-header h2 {
   font-size: 1rem;
   font-weight: 700;
@@ -207,6 +271,17 @@
   display: inline-block;
   background: var(--color-primary-light);
   color: var(--color-primary);
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .25rem .7rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+body.theme-dark .trash-type-badge {
+  display: inline-block;
+  background: #4F46E5;
+  color: white;
   font-size: .75rem;
   font-weight: 600;
   padding: .25rem .7rem;
